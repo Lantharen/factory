@@ -9,8 +9,16 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::factory()->count(10)->make();
 
-        dd($products);
+        return view('page.products',[
+            'products' => Product::paginate(),
+        ]);
+    }
+
+    public function show(int $id)
+    {
+        return view('page.show', [
+            'product' => Product::findOrFail($id)
+        ]);
     }
 }

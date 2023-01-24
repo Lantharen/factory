@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         if ($application->isLocal()) {
             Product::factory()
-                ->count(10)
+                ->count(200)
                 ->create();
         }
     }
